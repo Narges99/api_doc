@@ -1,0 +1,1 @@
+(self.webpackChunkdadkav_api_doc=self.webpackChunkdadkav_api_doc||[]).push([[4952],{3290:()=>{},5517:(a,e,n)=>{"use strict";n.r(e),n.d(e,{default:()=>s});n(6540);var o=n(8794),r=n(4848);function s(){return(0,r.jsx)(o.RedocStandalone,{specUrl:"/openapi.json",options:{nativeScrollbars:!0,theme:{colors:{primary:{main:"#1890ff"}}}}})}},7411:()=>{},7992:()=>{},8825:()=>{}}]);

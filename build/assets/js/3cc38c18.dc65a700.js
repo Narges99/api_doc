@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdadkav_api_doc=self.webpackChunkdadkav_api_doc||[]).push([[8147],{1050:a=>{a.exports=JSON.parse('{"name":"redoc-plugin","id":"default"}')}}]);
