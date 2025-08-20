@@ -1,0 +1,8699 @@
+swagger: '2.0'
+info:
+  title: IRHooshyar API
+  description: Test description
+  termsOfService: https://www.google.com/policies/terms/
+  contact:
+    email: contact@snippets.local
+  license:
+    name: BSD License
+  version: v1
+host: localhost:8008
+schemes:
+- http
+basePath: /
+consumes:
+- application/json
+produces:
+- application/json
+securityDefinitions:
+  Basic:
+    type: basic
+security:
+- Basic: []
+paths:
+  /accounts/allowed_panels/:
+    get:
+      operationId: accounts_allowed_panels
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Profile'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/change_password/:
+    post:
+      operationId: accounts_change_password_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ChangePassword'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ChangePassword'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/chat/:
+    get:
+      operationId: accounts_chat_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UserChat'
+      tags:
+      - accounts
+    post:
+      operationId: accounts_chat_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/GPTChat'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/GPTChat'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/chat/download/:
+    get:
+      operationId: accounts_chat_download_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - accounts
+    parameters: []
+  /accounts/chat/reaction/:
+    post:
+      operationId: accounts_chat_reaction
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ChatReaction'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ChatReaction'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/chat/session/:
+    get:
+      operationId: accounts_chat_session_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - accounts
+    parameters: []
+  /accounts/chat/summerize/:
+    post:
+      operationId: accounts_chat_summerize_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/GPTSummarization'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/GPTSummarization'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/download/:
+    get:
+      operationId: accounts_download_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UserDownloadSearch'
+      tags:
+      - accounts
+    post:
+      operationId: accounts_download_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UserDownload'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/UserDownload'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/error_logs/:
+    get:
+      operationId: accounts_error_logs_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UserErrorLogSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/error_logs/refresh/:
+    post:
+      operationId: accounts_error_logs_refresh
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UserErrorLogSearch'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/UserErrorLogSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/error_logs/{id}/:
+    get:
+      operationId: accounts_error_logs_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/UserErrorLogSearch'
+      tags:
+      - accounts
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /accounts/follow_status/:
+    get:
+      operationId: accounts_follow_status_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FollowSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/followers/:
+    get:
+      operationId: accounts_followers
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FollowSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/followings/:
+    get:
+      operationId: accounts_followings
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FollowSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/forgot_password/:
+    post:
+      operationId: accounts_forgot_password_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ForgotPassword'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ForgotPassword'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/logout/:
+    post:
+      operationId: accounts_logout_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Logout'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Logout'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/logs/:
+    get:
+      operationId: accounts_logs_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UserLogSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/logs/refresh/:
+    post:
+      operationId: accounts_logs_refresh
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UserLogSearch'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/UserLogSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/logs/{id}/:
+    get:
+      operationId: accounts_logs_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/UserLogSearch'
+      tags:
+      - accounts
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /accounts/manage_recommendation/:
+    get:
+      operationId: accounts_manage_recommendation_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RecommendationSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/manage_report_bug/:
+    get:
+      operationId: accounts_manage_report_bug_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ReportBugSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/manage_report_bug/{id}/:
+    get:
+      operationId: accounts_manage_report_bug_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ReportBugSearch'
+      tags:
+      - accounts
+    patch:
+      operationId: accounts_manage_report_bug_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ManageReportedBug'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ManageReportedBug'
+      tags:
+      - accounts
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /accounts/manage_user_panels/{user_id}/:
+    get:
+      operationId: accounts_manage_user_panels_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - accounts
+    put:
+      operationId: accounts_manage_user_panels_update
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - accounts
+    parameters:
+    - name: user_id
+      in: path
+      required: true
+      type: string
+  /accounts/manage_user_sources/{user_id}/:
+    put:
+      operationId: accounts_manage_user_sources_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ManageUserSource'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ManageUserSource'
+      tags:
+      - accounts
+    parameters:
+    - name: user_id
+      in: path
+      required: true
+      type: string
+  /accounts/manage_users/:
+    get:
+      operationId: accounts_manage_users_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ManageUserSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/manage_users/{id}/:
+    get:
+      operationId: accounts_manage_users_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ManageUser'
+      tags:
+      - accounts
+    put:
+      operationId: accounts_manage_users_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ManageUser'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ManageUser'
+      tags:
+      - accounts
+    delete:
+      operationId: accounts_manage_users_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - accounts
+    parameters:
+    - name: id
+      in: path
+      description: A unique integer value identifying this user.
+      required: true
+      type: integer
+  /accounts/not_following/:
+    get:
+      operationId: accounts_not_following
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UserSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/pendings_to_accept/:
+    get:
+      operationId: accounts_pendings_to_accept
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FollowSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/pendings_to_follow/:
+    get:
+      operationId: accounts_pendings_to_follow
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FollowSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/profile/:
+    get:
+      operationId: accounts_profile_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Profile'
+      tags:
+      - accounts
+    put:
+      operationId: accounts_profile_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Profile'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Profile'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/questions/:
+    post:
+      operationId: accounts_questions_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Questions'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Questions'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/recommendation/:
+    get:
+      operationId: accounts_recommendation_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RecommendationSearch'
+      tags:
+      - accounts
+    post:
+      operationId: accounts_recommendation_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Recommendation'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Recommendation'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/report_bug/:
+    post:
+      operationId: accounts_report_bug_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ReportBug'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ReportBug'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/resend_sms/:
+    post:
+      operationId: accounts_resend
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ResendMobile'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ResendMobile'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/reset_password/:
+    post:
+      operationId: accounts_reset_password_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ResetPassword'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ResetPassword'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/settings/:
+    get:
+      operationId: accounts_settings_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - accounts
+    parameters: []
+  /accounts/settings/access_token_lifetime/{lifetime}/:
+    get:
+      operationId: accounts_settings_set_access_token_lifetime
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - accounts
+    parameters:
+    - name: lifetime
+      in: path
+      required: true
+      type: string
+  /accounts/settings/concurrent_session_limit/{limit}/:
+    get:
+      operationId: accounts_settings_set_concurrent_session_limit
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - accounts
+    parameters:
+    - name: limit
+      in: path
+      required: true
+      type: string
+  /accounts/settings/login_failed_limit/{limit}/:
+    get:
+      operationId: accounts_settings_set_login_failed_limit
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - accounts
+    parameters:
+    - name: limit
+      in: path
+      required: true
+      type: string
+  /accounts/signup/:
+    post:
+      operationId: accounts_signup_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/SignUp'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/SignUp'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/token/:
+    post:
+      operationId: accounts_token_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Login'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Login'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/upload_users/:
+    post:
+      operationId: accounts_upload_users_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UploadUsers'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/UploadUsers'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/user_constants/:
+    get:
+      operationId: accounts_get_user_constants
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Dummy'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/users/:
+    get:
+      operationId: accounts_users_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/UserSearch'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/users/{id}/:
+    get:
+      operationId: accounts_users_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/UserSearch'
+      tags:
+      - accounts
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /accounts/users/{id}/followers/:
+    get:
+      operationId: accounts_users_followers
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FollowSearch'
+      tags:
+      - accounts
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /accounts/users/{id}/followings/:
+    get:
+      operationId: accounts_users_followings
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FollowSearch'
+      tags:
+      - accounts
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /accounts/users/{user2_id}/change_following_status/:
+    post:
+      operationId: accounts_users_change_following_status
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Follow'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Follow'
+      tags:
+      - accounts
+    parameters:
+    - name: user2_id
+      in: path
+      required: true
+      type: string
+  /accounts/verify_mobile/:
+    post:
+      operationId: accounts_verify
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/VerifyUserMobile'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/VerifyUserMobile'
+      tags:
+      - accounts
+    parameters: []
+  /hooshyar/actor/:
+    get:
+      operationId: hooshyar_actor_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ActorSearchSerizlier'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/actor/{actor_id}/correlation/{source_id}/:
+    get:
+      operationId: hooshyar_actor_correlation
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ActorCorrelation'
+      tags:
+      - hooshyar
+    parameters:
+    - name: actor_id
+      in: path
+      required: true
+      type: string
+    - name: source_id
+      in: path
+      required: true
+      type: string
+  /hooshyar/actor/{actor_id}/timeseries/{source_id}/:
+    get:
+      operationId: hooshyar_actor_timeseries
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ActorTimeSeries'
+      tags:
+      - hooshyar
+    parameters:
+    - name: actor_id
+      in: path
+      required: true
+      type: string
+    - name: source_id
+      in: path
+      required: true
+      type: string
+  /hooshyar/clustering/charts_data/:
+    get:
+      operationId: hooshyar_clustering_charts_data
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarClusteringChartsSerializer'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/clustering/paragraph/:
+    get:
+      operationId: hooshyar_clustering_search_paragraph
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarClusteringParagraphsSerializer'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/clustering/topic/:
+    get:
+      operationId: hooshyar_clustering_search_topic
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarClusteringInformationSerializer'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/clustering/topic/{id}/change_label/:
+    post:
+      operationId: hooshyar_clustering_topic_change_label_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ClusteringLabels'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ClusteringLabels'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/:
+    get:
+      operationId: hooshyar_document_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_document_list
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document/bulk_search/:
+    get:
+      operationId: hooshyar_document_bulk_search_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document/semantic_similarity/{object_id}/:
+    get:
+      operationId: hooshyar_document_semantic_similarity
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: object_id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/update_plan_info/:
+    post:
+      operationId: hooshyar_document_update_plan_info_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DocumentUserPlansInfo'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentUserPlansInfo'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document/update_plan_type/:
+    post:
+      operationId: hooshyar_document_update_plan_type_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DocumentUserPlanType'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentUserPlanType'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document/update_relation_status_info/:
+    post:
+      operationId: hooshyar_document_update_relation_status_info_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DocumentUserRelationStatusInfo'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentUserRelationStatusInfo'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document/update_validity_status/:
+    post:
+      operationId: hooshyar_document_update_validity_status_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DocumentUserValidityStatus'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentUserValidityStatus'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document/upload-excel/:
+    post:
+      operationId: hooshyar_document_upload-excel_create
+      description: ''
+      parameters: []
+      responses:
+        '201':
+          description: ''
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document/{document_id}/add_comment/:
+    post:
+      operationId: hooshyar_document_add_comment_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DocumentComment'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentComment'
+      tags:
+      - hooshyar
+    parameters:
+    - name: document_id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/{document_id}/add_note/:
+    post:
+      operationId: hooshyar_document_add_note_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DocumentNote'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentNote'
+      tags:
+      - hooshyar
+    parameters:
+    - name: document_id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/{id}/:
+    get:
+      operationId: hooshyar_document_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_document_read
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/{id}/actors_in_content/:
+    get:
+      operationId: hooshyar_document_actors_in_content
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/{id}/affected_documents/:
+    get:
+      operationId: hooshyar_document_affected_documents
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/{id}/affecting_documents/:
+    get:
+      operationId: hooshyar_document_affecting_documents
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/{id}/referenced_by_documents/:
+    get:
+      operationId: hooshyar_document_referenced_by_documents
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/{id}/referenced_documents/:
+    get:
+      operationId: hooshyar_document_referenced_documents
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/{id}/related_regulation/:
+    get:
+      operationId: hooshyar_document_related_regulation
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/{id}/related_rules/:
+    get:
+      operationId: hooshyar_document_related_rules
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document/{id}/sentiment/:
+    get:
+      operationId: hooshyar_document_sentiment
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document_comment/:
+    get:
+      operationId: hooshyar_document_comment_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DocumentCommentSearch'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document_comment/{id}/:
+    get:
+      operationId: hooshyar_document_comment_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentCommentSearch'
+      tags:
+      - hooshyar
+    patch:
+      operationId: hooshyar_document_comment_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DocumentComment'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentComment'
+      tags:
+      - hooshyar
+    delete:
+      operationId: hooshyar_document_comment_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document_comment/{id}/dislike/:
+    post:
+      operationId: hooshyar_document_comment_dislike
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DocumentCommentLikeDislike'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentCommentLikeDislike'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document_comment/{id}/dislikes/:
+    get:
+      operationId: hooshyar_document_comment_dislikes
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DocumentCommentLikeDislikeSearch'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document_comment/{id}/like/:
+    post:
+      operationId: hooshyar_document_comment_like
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DocumentCommentLikeDislike'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentCommentLikeDislike'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document_comment/{id}/likes/:
+    get:
+      operationId: hooshyar_document_comment_likes
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DocumentCommentLikeDislikeSearch'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document_file/download/:
+    get:
+      operationId: hooshyar_document_file_download_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document_note/:
+    get:
+      operationId: hooshyar_document_note_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DocumentNoteSearch'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document_note/{id}/:
+    get:
+      operationId: hooshyar_document_note_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentNoteSearch'
+      tags:
+      - hooshyar
+    patch:
+      operationId: hooshyar_document_note_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DocumentNote'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentNote'
+      tags:
+      - hooshyar
+    delete:
+      operationId: hooshyar_document_note_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document_validation/:
+    get:
+      operationId: hooshyar_document_validation_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DocumentValidationSearch'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document_with_users_actions/:
+    get:
+      operationId: hooshyar_document_with_users_actions_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_document_with_users_actions_list
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/document_with_users_actions/{id}/:
+    get:
+      operationId: hooshyar_document_with_users_actions_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_document_with_users_actions_read
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarDocumentSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/document_with_users_actions_search_options/:
+    get:
+      operationId: hooshyar_document_with_users_actions_search_options_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DocumentWithUsersActionsSearchOptionsSearch'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_document_with_users_actions_search_options_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DocumentWithUsersActionsSearchOptions'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentWithUsersActionsSearchOptions'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/draft/:
+    get:
+      operationId: hooshyar_draft_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DraftDocumentSearch'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_draft_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateDraftDocument'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/CreateDraftDocument'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/draft/{id}/:
+    get:
+      operationId: hooshyar_draft_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DraftDocumentSearch'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/draft/{id}/actors_in_content/:
+    get:
+      operationId: hooshyar_draft_actors_in_content
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Dummy'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/excel_words/:
+    get:
+      operationId: hooshyar_excel_words_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ExcelWordsSearch'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_excel_words_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ExcelWords'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ExcelWords'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/excel_words/{id}/:
+    get:
+      operationId: hooshyar_excel_words_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ExcelWordsSearch'
+      tags:
+      - hooshyar
+    patch:
+      operationId: hooshyar_excel_words_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateExcelWords'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/UpdateExcelWords'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/farsnet/:
+    get:
+      operationId: hooshyar_farsnet_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FarsnetSearchSerizlier'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/knowledge_graph/:
+    get:
+      operationId: hooshyar_knowledge_graph_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/KnowledgeGraphSearch'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_knowledge_graph_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/KnowledgeGraph'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/KnowledgeGraph'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/knowledge_graph/{id}/:
+    get:
+      operationId: hooshyar_knowledge_graph_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/KnowledgeGraphSearch'
+      tags:
+      - hooshyar
+    put:
+      operationId: hooshyar_knowledge_graph_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/KnowledgeGraph'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/KnowledgeGraph'
+      tags:
+      - hooshyar
+    delete:
+      operationId: hooshyar_knowledge_graph_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/manage_document_comment/:
+    get:
+      operationId: hooshyar_manage_document_comment_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DocumentCommentSearch'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/manage_document_comment/{id}/:
+    get:
+      operationId: hooshyar_manage_document_comment_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DocumentCommentSearch'
+      tags:
+      - hooshyar
+    patch:
+      operationId: hooshyar_manage_document_comment_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ManageDocumentComment'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ManageDocumentComment'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/paragraph/:
+    get:
+      operationId: hooshyar_paragraph_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_paragraph_list
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/paragraph/semantic_similarity/{object_id}/:
+    get:
+      operationId: hooshyar_paragraph_semantic_similarity
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: object_id
+      in: path
+      required: true
+      type: string
+  /hooshyar/paragraph/update_plan_info/:
+    post:
+      operationId: hooshyar_paragraph_update_plan_info_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ParagraphUserPlansInfo'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ParagraphUserPlansInfo'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/paragraph/update_plan_type/:
+    post:
+      operationId: hooshyar_paragraph_update_plan_type_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ParagraphUserPlanType'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ParagraphUserPlanType'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/paragraph/update_validity_status/:
+    post:
+      operationId: hooshyar_paragraph_update_validity_status_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ParagraphUserValidityStatus'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ParagraphUserValidityStatus'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/paragraph/{id}/:
+    get:
+      operationId: hooshyar_paragraph_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_paragraph_read
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/paragraph/{id}/actors_in_content/:
+    get:
+      operationId: hooshyar_paragraph_actors_in_content
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/paragraph/{id}/sentiment/:
+    get:
+      operationId: hooshyar_paragraph_sentiment
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/paragraph_actor/:
+    get:
+      operationId: hooshyar_paragraph_actor_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ParagraphActorSearch'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/paragraph_with_users_actions/:
+    get:
+      operationId: hooshyar_paragraph_with_users_actions_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_paragraph_with_users_actions_list
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/paragraph_with_users_actions/{id}/:
+    get:
+      operationId: hooshyar_paragraph_with_users_actions_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_paragraph_with_users_actions_read
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/HooshyarParagraphSearchSerializer'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/paragraph_with_users_actions_search_options/:
+    get:
+      operationId: hooshyar_paragraph_with_users_actions_search_options_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ParagraphWithUsersActionsSearchOptionsSearch'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_paragraph_with_users_actions_search_options_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ParagraphWithUsersActionsSearchOptions'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ParagraphWithUsersActionsSearchOptions'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/plan/:
+    get:
+      operationId: hooshyar_plan_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PlanSearch'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_plan_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Plan'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Plan'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/plan/{id}/:
+    get:
+      operationId: hooshyar_plan_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/PlanSearch'
+      tags:
+      - hooshyar
+    patch:
+      operationId: hooshyar_plan_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdatePlan'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/UpdatePlan'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/rag/create_group/:
+    post:
+      operationId: hooshyar_rag_create_group
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/RagCreateGroup'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/RagCreateGroup'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/rag/upload_and_index/:
+    post:
+      operationId: hooshyar_rag_upload_and_index
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/RagCreateGroup'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/RagCreateGroup'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/references/:
+    get:
+      operationId: hooshyar_references_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ReferencesSearch'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/references/{id}/:
+    get:
+      operationId: hooshyar_references_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ReferencesSearch'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/search_recommendation/:
+    post:
+      operationId: hooshyar_recommendation
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/SearchRecommendation'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/SearchRecommendation'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/select_country/:
+    post:
+      operationId: hooshyar_select_country_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Dummy'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Dummy'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/select_guide/:
+    post:
+      operationId: hooshyar_select_guide_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Dummy'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Dummy'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/source/:
+    get:
+      operationId: hooshyar_source_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SourceSearch'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/source/{id}/:
+    get:
+      operationId: hooshyar_source_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/SourceSearch'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/spell_checker/:
+    get:
+      operationId: hooshyar_spell_checker_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SpellChecker'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_spell_checker_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/SpellChecker'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/SpellChecker'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/tanghihi_project/:
+    get:
+      operationId: hooshyar_tanghihi_project_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TanghihiProjectSearch'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_tanghihi_project_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/TanghihiProject'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/TanghihiProject'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/tanghihi_project/document/search_options/:
+    get:
+      operationId: hooshyar_tanghihi_project_document_search_options_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TanghihiProjectSearchOptionsForDocumentWithUsersActionsSearch'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_tanghihi_project_document_search_options_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/TanghihiProjectSearchOptionsForDocumentWithUsersActions'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/TanghihiProjectSearchOptionsForDocumentWithUsersActions'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/tanghihi_project/paragraph/search_options/:
+    get:
+      operationId: hooshyar_tanghihi_project_paragraph_search_options_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TanghihiProjectSearchOptionsForParagraphWithUsersActionsSearch'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_tanghihi_project_paragraph_search_options_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/TanghihiProjectSearchOptionsForParagraphWithUsersActions'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/TanghihiProjectSearchOptionsForParagraphWithUsersActions'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/tanghihi_project/{id}/:
+    get:
+      operationId: hooshyar_tanghihi_project_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/TanghihiProjectSearch'
+      tags:
+      - hooshyar
+    patch:
+      operationId: hooshyar_tanghihi_project_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/TanghihiProject'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/TanghihiProject'
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/thermal_knowledge_graph/:
+    get:
+      operationId: hooshyar_thermal_knowledge_graph_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ThermalKnowledgeGraphSearch'
+      tags:
+      - hooshyar
+    post:
+      operationId: hooshyar_thermal_knowledge_graph_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ThermalKnowledgeGraph'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/ThermalKnowledgeGraph'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/thermal_knowledge_graph/{id}/:
+    get:
+      operationId: hooshyar_thermal_knowledge_graph_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ThermalKnowledgeGraphSearch'
+      tags:
+      - hooshyar
+    put:
+      operationId: hooshyar_thermal_knowledge_graph_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ThermalKnowledgeGraph'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ThermalKnowledgeGraph'
+      tags:
+      - hooshyar
+    delete:
+      operationId: hooshyar_thermal_knowledge_graph_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - hooshyar
+    parameters:
+    - name: id
+      in: path
+      required: true
+      type: string
+  /hooshyar/upload_knowledge_graph/:
+    post:
+      operationId: hooshyar_upload_knowledge_graph_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UploadKnowledgeGraph'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/UploadKnowledgeGraph'
+      tags:
+      - hooshyar
+    parameters: []
+  /hooshyar/upload_thermal_knowledge_graph/:
+    post:
+      operationId: hooshyar_upload_thermal_knowledge_graph_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UploadThermalKnowledgeGraph'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/UploadThermalKnowledgeGraph'
+      tags:
+      - hooshyar
+    parameters: []
+definitions:
+  Profile:
+    required:
+    - name
+    - expertise
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      username:
+        title: Username
+        type: string
+        minLength: 1
+      email:
+        title: Email
+        type: string
+        format: email
+        readOnly: true
+        minLength: 1
+      mobile:
+        title: Mobile
+        type: string
+        maxLength: 255
+        x-nullable: true
+      name:
+        title: Name
+        type: string
+        maxLength: 255
+        minLength: 1
+      expertise:
+        title: Expertise
+        type: string
+        enum:
+        - حقوق
+        - ''
+        - سایر تخصص‌ها
+      sub_expertise:
+        title: Sub expertise
+        type: string
+        maxLength: 255
+        x-nullable: true
+      avatar:
+        title: Avatar
+        type: string
+        x-nullable: true
+      cover:
+        title: Cover
+        type: string
+        x-nullable: true
+      bio:
+        title: Bio
+        type: string
+        x-nullable: true
+      how_to_find_us:
+        title: How to find us
+        type: string
+        x-nullable: true
+      use_free_plan:
+        title: Use free plan
+        type: boolean
+      account_plan_type:
+        title: Account plan type
+        type: integer
+        enum:
+        - 0
+        - 1
+        - 2
+        - 3
+      account_plan_submitted_at:
+        title: Account plan submitted at
+        type: string
+        format: date-time
+        x-nullable: true
+      account_plan_minutes:
+        title: Account plan minutes
+        type: integer
+      account_plan_price:
+        title: Account plan price
+        type: integer
+      status:
+        title: Status
+        type: integer
+        enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        readOnly: true
+      is_private:
+        title: Is private
+        type: boolean
+      is_admin:
+        title: Is admin
+        type: boolean
+        readOnly: true
+      created_at:
+        title: Created at
+        type: string
+        format: date-time
+        readOnly: true
+      last_change:
+        title: Last change
+        type: string
+        format: date-time
+        readOnly: true
+        x-nullable: true
+      last_login:
+        title: Last login
+        type: string
+        format: date-time
+        readOnly: true
+        x-nullable: true
+      subscription_from:
+        title: Subscription from
+        type: string
+        format: date-time
+        readOnly: true
+      subscription_until:
+        title: Subscription until
+        type: string
+        format: date-time
+        readOnly: true
+      subscription_minute:
+        title: Subscription minute
+        type: string
+        readOnly: true
+      remaining_subscription_minute:
+        title: Remaining subscription minute
+        type: string
+        readOnly: true
+  ChangePassword:
+    required:
+    - old_password
+    - new_password
+    - new_password_confirm
+    type: object
+    properties:
+      old_password:
+        title: Old password
+        type: string
+        minLength: 1
+      new_password:
+        title: New password
+        type: string
+        minLength: 1
+      new_password_confirm:
+        title: New password confirm
+        type: string
+        minLength: 1
+  UserChat:
+    required:
+    - chat_type
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      session:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      chat_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      chat_type:
+        title: Chat type
+        type: integer
+        enum:
+        - 0
+        - 1
+      create_word_file:
+        title: Create word file
+        type: boolean
+        default: false
+  GPTChat:
+    required:
+    - query
+    - session
+    type: object
+    properties:
+      query:
+        title: Query
+        type: string
+        minLength: 1
+      session:
+        title: Session
+        type: string
+        minLength: 1
+  ChatReaction:
+    required:
+    - chat_id
+    - reaction
+    type: object
+    properties:
+      chat_id:
+        title: Chat id
+        type: string
+        minLength: 1
+      reaction:
+        title: Reaction
+        type: string
+        enum:
+        - like
+        - dislike
+  GPTSummarization:
+    required:
+    - files
+    - session
+    type: object
+    properties:
+      files:
+        type: array
+        items:
+          type: string
+          readOnly: true
+          format: uri
+      session:
+        title: Session
+        type: string
+        minLength: 1
+  UserDownloadSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      file_type:
+        title: File type
+        type: string
+        enum:
+        - excel
+        - file
+  UserDownload:
+    required:
+    - file_type
+    - panel_name
+    - file_name
+    type: object
+    properties:
+      file_type:
+        title: File type
+        type: string
+        enum:
+        - excel
+        - file
+      panel_name:
+        title: Panel name
+        type: string
+        minLength: 1
+      file_name:
+        title: File name
+        type: string
+        minLength: 1
+  UserErrorLogSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - id
+        - submitted_at
+        default: submitted_at
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      user:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      user_ip:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      method:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      host:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      url:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      submitted_from:
+        title: Submitted from
+        type: string
+        minLength: 1
+      submitted_until:
+        title: Submitted until
+        type: string
+        minLength: 1
+      field_to_agg:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      status:
+        type: array
+        items:
+          type: integer
+  FollowSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - submited_at
+        - user1_term_order
+        - user2_term_order
+        default: submited_at
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      user1_id:
+        title: User1 id
+        type: string
+        minLength: 1
+      user2_id:
+        title: User2 id
+        type: string
+        minLength: 1
+      status:
+        type: array
+        items:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+  ForgotPassword:
+    required:
+    - mobile
+    type: object
+    properties:
+      mobile:
+        title: Mobile
+        type: string
+        minLength: 1
+  Logout:
+    type: object
+    properties: {}
+  UserLogSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - id
+        - submitted_at
+        default: submitted_at
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      user:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      user_ip:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      method:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      host:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      url:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      submitted_from:
+        title: Submitted from
+        type: string
+        minLength: 1
+      submitted_until:
+        title: Submitted until
+        type: string
+        minLength: 1
+      field_to_agg:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  RecommendationSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - id
+        - submited_at
+        - rate
+        default: submited_at
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      content:
+        title: Content
+        type: string
+        minLength: 1
+      rate:
+        title: Rate
+        type: integer
+        maximum: 5
+        minimum: 1
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      user_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      submited_from:
+        title: Submited from
+        type: string
+        minLength: 1
+      submited_until:
+        title: Submited until
+        type: string
+        minLength: 1
+  ReportBugSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - id
+        - submited_at
+        - checked
+        - panel
+        - sub_panel
+        - tab
+        default: submited_at
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      panel:
+        type: array
+        items:
+          type: string
+      sub_panel:
+        type: array
+        items:
+          type: string
+      tab:
+        type: array
+        items:
+          type: string
+      checked:
+        title: Checked
+        type: boolean
+        x-nullable: true
+      user_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      submited_from:
+        title: Submited from
+        type: string
+        minLength: 1
+      submited_until:
+        title: Submited until
+        type: string
+        minLength: 1
+  ManageReportedBug:
+    required:
+    - checked
+    type: object
+    properties:
+      checked:
+        title: Checked
+        type: boolean
+  ManageUserSource:
+    type: object
+    properties:
+      sources_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  ManageUserSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - created_at
+        - username
+        - name
+        - subscription_until
+        - status
+        - send_log
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - username
+        - name
+        - bio
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      status:
+        title: Status
+        type: integer
+        enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+      is_private:
+        title: Is private
+        type: boolean
+        x-nullable: true
+      is_admin:
+        title: Is admin
+        type: boolean
+        x-nullable: true
+      top_users:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  ManageUser:
+    required:
+    - email
+    - name
+    - expertise
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      username:
+        title: Username
+        type: string
+        minLength: 1
+      email:
+        title: Email
+        type: string
+        format: email
+        maxLength: 255
+        minLength: 1
+      mobile:
+        title: Mobile
+        type: string
+        maxLength: 255
+        x-nullable: true
+      name:
+        title: Name
+        type: string
+        maxLength: 255
+        minLength: 1
+      expertise:
+        title: Expertise
+        type: string
+        enum:
+        - حقوق
+        - ''
+        - سایر تخصص‌ها
+      sub_expertise:
+        title: Sub expertise
+        type: string
+        maxLength: 255
+        x-nullable: true
+      avatar:
+        title: Avatar
+        type: string
+        x-nullable: true
+      cover:
+        title: Cover
+        type: string
+        x-nullable: true
+      bio:
+        title: Bio
+        type: string
+        x-nullable: true
+      how_to_find_us:
+        title: How to find us
+        type: string
+        x-nullable: true
+      use_free_plan:
+        title: Use free plan
+        type: boolean
+      account_plan_type:
+        title: Account plan type
+        type: integer
+        enum:
+        - 0
+        - 1
+        - 2
+        - 3
+      account_plan_submitted_at:
+        title: Account plan submitted at
+        type: string
+        format: date-time
+        x-nullable: true
+      account_plan_minutes:
+        title: Account plan minutes
+        type: integer
+      account_plan_price:
+        title: Account plan price
+        type: integer
+      status:
+        title: Status
+        type: integer
+        enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+      is_private:
+        title: Is private
+        type: boolean
+      is_admin:
+        title: Is admin
+        type: boolean
+      created_at:
+        title: Created at
+        type: string
+        format: date-time
+        readOnly: true
+      last_change:
+        title: Last change
+        type: string
+        format: date-time
+        readOnly: true
+        x-nullable: true
+      last_login:
+        title: Last login
+        type: string
+        format: date-time
+        readOnly: true
+        x-nullable: true
+      subscription_from:
+        title: Subscription from
+        type: string
+        format: date-time
+        readOnly: true
+      subscription_until:
+        title: Subscription until
+        type: string
+        format: date-time
+        readOnly: true
+      subscription_minute:
+        title: Subscription minute
+        type: string
+        readOnly: true
+      remaining_subscription_minute:
+        title: Remaining subscription minute
+        type: string
+        readOnly: true
+      new_subscription_minute:
+        title: New subscription minute
+        type: integer
+      send_log:
+        title: Send log
+        type: boolean
+  UserSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - created_at
+        - username
+        - name
+        - subscription_until
+        - status
+        - send_log
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - username
+        - name
+        - bio
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      status:
+        title: Status
+        type: integer
+        enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+      is_private:
+        title: Is private
+        type: boolean
+        x-nullable: true
+      is_admin:
+        title: Is admin
+        type: boolean
+        x-nullable: true
+      top_users:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  Questions:
+    required:
+    - name
+    - email
+    - how_to_find_us
+    - question
+    type: object
+    properties:
+      name:
+        title: Name
+        type: string
+        minLength: 1
+      email:
+        title: Email
+        type: string
+        minLength: 1
+      mobile:
+        title: Mobile
+        type: string
+        default: ''
+        x-nullable: true
+      how_to_find_us:
+        title: How to find us
+        type: string
+        minLength: 1
+      question:
+        title: Question
+        type: string
+        minLength: 1
+  Recommendation:
+    required:
+    - content
+    - rate
+    type: object
+    properties:
+      content:
+        title: Content
+        type: string
+        minLength: 1
+      rate:
+        title: Rate
+        type: integer
+        maximum: 5
+        minimum: 1
+  ReportBug:
+    required:
+    - panel_name
+    - content
+    type: object
+    properties:
+      panel_name:
+        title: Panel name
+        type: string
+        minLength: 1
+      content:
+        title: Content
+        type: string
+        minLength: 1
+      images:
+        type: array
+        items:
+          type: object
+          additionalProperties:
+            type: string
+            x-nullable: true
+  ResendMobile:
+    required:
+    - session
+    type: object
+    properties:
+      session:
+        title: Session
+        type: string
+        maxLength: 255
+        minLength: 1
+  ResetPassword:
+    required:
+    - session
+    - verification_code
+    - password
+    - password_confirm
+    type: object
+    properties:
+      session:
+        title: Session
+        type: string
+        maxLength: 255
+        minLength: 1
+      verification_code:
+        title: Verification code
+        type: integer
+      password:
+        title: Password
+        type: string
+        minLength: 1
+      password_confirm:
+        title: Password confirm
+        type: string
+        minLength: 1
+  SignUp:
+    required:
+    - username
+    - name
+    - expertise
+    - password
+    - recaptcha
+    type: object
+    properties:
+      username:
+        title: Username
+        type: string
+        minLength: 1
+      mobile:
+        title: Mobile
+        type: string
+        x-nullable: true
+      name:
+        title: Name
+        type: string
+        maxLength: 255
+        minLength: 1
+      expertise:
+        title: Expertise
+        type: string
+        enum:
+        - حقوق
+        - ''
+        - سایر تخصص‌ها
+      sub_expertise:
+        title: Sub expertise
+        type: string
+        maxLength: 255
+        x-nullable: true
+      how_to_find_us:
+        title: How to find us
+        type: string
+        x-nullable: true
+      password:
+        title: Password
+        type: string
+        minLength: 1
+      recaptcha:
+        title: Recaptcha
+        type: string
+        minLength: 1
+  Login:
+    required:
+    - username
+    - password
+    type: object
+    properties:
+      username:
+        title: Username
+        type: string
+        minLength: 1
+      password:
+        title: Password
+        type: string
+        minLength: 1
+  UploadUsers:
+    type: object
+    properties:
+      file:
+        title: File
+        type: string
+        readOnly: true
+        format: uri
+  Dummy:
+    type: object
+    properties: {}
+  Follow:
+    required:
+    - action
+    type: object
+    properties:
+      action:
+        title: Action
+        type: string
+        enum:
+        - follow
+        - unfollow
+        - accept
+        - reject
+        - block
+        - unblock
+  VerifyUserMobile:
+    required:
+    - session
+    - verification_code
+    type: object
+    properties:
+      session:
+        title: Session
+        type: string
+        maxLength: 255
+        minLength: 1
+      verification_code:
+        title: Verification code
+        type: integer
+  ActorSearchSerizlier:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - name.keyword
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      name:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  ActorCorrelation:
+    required:
+    - source_id
+    - source_actor_id
+    type: object
+    properties:
+      source_id:
+        title: Source id
+        type: string
+        minLength: 1
+      source_actor_id:
+        title: Source actor id
+        type: string
+        minLength: 1
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - executor_corr
+        - collaborator_corr
+        - authorized_corr
+        - total_corr
+        - actor_name
+        default: total_corr
+      order:
+        title: Order
+        type: string
+        enum:
+        - asc
+        - desc
+        default: desc
+  ActorTimeSeries:
+    required:
+    - source_id
+    - actor_id
+    type: object
+    properties:
+      source_id:
+        title: Source id
+        type: string
+        minLength: 1
+      actor_id:
+        title: Actor id
+        type: integer
+      arima:
+        title: Arima
+        type: boolean
+        default: false
+  HooshyarClusteringChartsSerializer:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      source_id:
+        title: Source id
+        type: string
+        minLength: 1
+      algorithm:
+        title: Algorithm
+        type: string
+        minLength: 1
+      vector_type:
+        title: Vector type
+        type: string
+        minLength: 1
+      feature_type:
+        title: Feature type
+        type: string
+        minLength: 1
+      main_subject:
+        title: Main subject
+        type: string
+        minLength: 1
+      cluster_count:
+        title: Cluster count
+        type: integer
+      cluster_number:
+        title: Cluster number
+        type: integer
+  HooshyarClusteringParagraphsSerializer:
+    type: object
+    properties:
+      source_id:
+        title: Source id
+        type: string
+        minLength: 1
+      algorithm:
+        title: Algorithm
+        type: string
+        minLength: 1
+      vector_type:
+        title: Vector type
+        type: string
+        minLength: 1
+      feature_type:
+        title: Feature type
+        type: string
+        minLength: 1
+      main_subject:
+        title: Main subject
+        type: string
+        minLength: 1
+      cluster_count:
+        title: Cluster count
+        type: integer
+      cluster_number:
+        title: Cluster number
+        type: integer
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - document_name
+        - document_datetime
+        - main_subject
+        default: document_datetime
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      include_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  HooshyarClusteringInformationSerializer:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - cluster_number
+        - paragraphs_count
+        - entropy
+        - main_subject
+        default: entropy
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      source_id:
+        title: Source id
+        type: string
+        minLength: 1
+      algorithm:
+        title: Algorithm
+        type: string
+        minLength: 1
+      vector_type:
+        title: Vector type
+        type: string
+        minLength: 1
+      feature_type:
+        title: Feature type
+        type: string
+        minLength: 1
+      cluster_count:
+        title: Cluster count
+        type: integer
+      cluster_number:
+        title: Cluster number
+        type: integer
+  ClusteringLabels:
+    required:
+    - label
+    type: object
+    properties:
+      label:
+        title: Label
+        type: string
+  HooshyarDocumentSearchSerializer:
+    type: object
+    properties:
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      exclude_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      source_id:
+        type: array
+        items:
+          type: integer
+      source_name:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      person:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      person_search_type:
+        title: Person search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      location:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      location_search_type:
+        title: Location search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      organization:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      organization_search_type:
+        title: Organization search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      highlight_entities:
+        title: Highlight entities
+        type: boolean
+        default: false
+      source_name_agg:
+        title: Source name agg
+        type: boolean
+        default: false
+      similarity_field:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      similar_object_id:
+        title: Similar object id
+        type: string
+        minLength: 1
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - term_order
+        - name.keyword
+        - keyword_main_subject
+        - category.keyword
+        - datetime
+        - type
+        - level
+        - revoked_type_name.keyword
+        - download_datetime
+        - last_status
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      include_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      year_from:
+        title: Year from
+        type: integer
+      year_to:
+        title: Year to
+        type: integer
+      keyword_main_subject:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      keyword_main_subject_search_type:
+        title: Keyword main subject search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      category:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      category_search_type:
+        title: Category search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      type:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      type_search_type:
+        title: Type search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      level_search_type:
+        title: Level search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      validity:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      validity_search_type:
+        title: Validity search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      affect_status:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      last_status:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      last_status_search_type:
+        title: Last status search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      actor_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      actor_agg:
+        title: Actor agg
+        type: boolean
+        default: false
+      draft_id:
+        title: Draft id
+        type: string
+        minLength: 1
+      is_validation:
+        title: Is validation
+        type: boolean
+        default: false
+      normalize_datetime:
+        title: Normalize datetime
+        type: boolean
+        default: false
+      similar_index_name:
+        title: Similar index name
+        type: string
+        enum:
+        - hooshyar_document
+        - hooshyar_paragraph
+        - hooshyar_draft_document
+        default: hooshyar_document
+  HooshyarParagraphSearchSerializer:
+    type: object
+    properties:
+      document_fields:
+        type: array
+        items:
+          type: string
+          enum:
+          - content
+          - name
+          - type
+          - level
+          - category
+          - validity
+          - year
+          - references
+      year_ranges:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      document_format:
+        title: Document format
+        type: string
+        enum:
+        - word
+        - pdf
+        - excel
+        default: excel
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      exclude_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      source_id:
+        type: array
+        items:
+          type: integer
+      source_name:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      person:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      person_search_type:
+        title: Person search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      location:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      location_search_type:
+        title: Location search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      organization:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      organization_search_type:
+        title: Organization search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      highlight_entities:
+        title: Highlight entities
+        type: boolean
+        default: false
+      source_name_agg:
+        title: Source name agg
+        type: boolean
+        default: false
+      similarity_field:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      similar_object_id:
+        title: Similar object id
+        type: string
+        minLength: 1
+      document_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - _id
+        - paragraph_number
+        - document_datetime
+        - keyword_main_subject
+        - document_type
+        - document_level
+        default: paragraph_number
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      include_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      keyword_main_subject:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      keyword_main_subject_search_type:
+        title: Keyword main subject search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      document_type:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      document_type_search_type:
+        title: Document type search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      document_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      document_level_search_type:
+        title: Document level search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      document_category:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      document_category_search_type:
+        title: Document category search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      document_year_from:
+        title: Document year from
+        type: integer
+      document_year_to:
+        title: Document year to
+        type: integer
+      document_source_id:
+        type: array
+        items:
+          type: integer
+      document_source_id_search_type:
+        title: Document source id search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      document_last_status:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      document_last_status_type:
+        title: Document last status type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      similar_index_name:
+        title: Similar index name
+        type: string
+        enum:
+        - hooshyar_document
+        - hooshyar_paragraph
+        - hooshyar_draft_document
+        default: hooshyar_paragraph
+      document_split_by:
+        title: Document split by
+        type: string
+        enum:
+        - type
+        - level
+        - category
+  DocumentUserPlansInfo:
+    required:
+    - object_ids
+    type: object
+    properties:
+      plans:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      plan_id:
+        title: Plan id
+        type: string
+        minLength: 1
+      project_id:
+        title: Project id
+        type: string
+        minLength: 1
+      object_ids:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      document_id:
+        title: Document id
+        type: string
+        minLength: 1
+      action:
+        title: Action
+        type: string
+        enum:
+        - add
+        - remove
+        - update
+        - deactivate
+        - activate
+        default: update
+  DocumentUserPlanType:
+    required:
+    - object_ids
+    type: object
+    properties:
+      plan_id:
+        title: Plan id
+        type: string
+        minLength: 1
+      project_id:
+        title: Project id
+        type: string
+        minLength: 1
+      object_ids:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      type:
+        title: Type
+        type: string
+        enum:
+        - اصلی
+        - فرعی
+        default: اصلی
+      description:
+        title: Description
+        type: string
+      action:
+        title: Action
+        type: string
+        enum:
+        - add
+        - update
+        - remove
+        default: add
+  DocumentUserRelationStatusInfo:
+    required:
+    - object_ids
+    type: object
+    properties:
+      relation:
+        title: Relation
+        type: string
+        enum:
+        - related
+        - not_related
+        - not_set
+        default: not_set
+      excel_words_id:
+        title: Excel words id
+        type: string
+        minLength: 1
+      project_id:
+        title: Project id
+        type: string
+        minLength: 1
+      object_ids:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  DocumentUserValidityStatus:
+    required:
+    - validity
+    - object_ids
+    type: object
+    properties:
+      validity:
+        title: Validity
+        type: string
+      project_id:
+        title: Project id
+        type: string
+        minLength: 1
+      object_ids:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  DocumentComment:
+    required:
+    - content
+    type: object
+    properties:
+      content:
+        title: Content
+        type: string
+        minLength: 1
+      hashtags:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+  DocumentNote:
+    required:
+    - content
+    type: object
+    properties:
+      content:
+        title: Content
+        type: string
+        minLength: 1
+      hashtags:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      starred:
+        title: Starred
+        type: boolean
+        default: false
+  DocumentCommentSearch:
+    type: object
+    properties:
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      document_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      accepted:
+        title: Accepted
+        type: boolean
+        x-nullable: true
+      hashtags:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      submited_from:
+        title: Submited from
+        type: string
+        minLength: 1
+      submited_until:
+        title: Submited until
+        type: string
+        minLength: 1
+      user_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - submited_at
+        - user.name.keyword
+        - document.name.keyword
+        - like_count
+        - dislike_count
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      include_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  DocumentCommentLikeDislike:
+    type: object
+    properties: {}
+  DocumentCommentLikeDislikeSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      comment_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      like:
+        title: Like
+        type: boolean
+        x-nullable: true
+      user_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  DocumentNoteSearch:
+    type: object
+    properties:
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      document_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      starred:
+        title: Starred
+        type: boolean
+        x-nullable: true
+      hashtags:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      submited_from:
+        title: Submited from
+        type: string
+        minLength: 1
+      submited_until:
+        title: Submited until
+        type: string
+        minLength: 1
+      user_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - submited_at
+        - hashtags
+        - starred
+        - content.keyword
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      include_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  DocumentValidationSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      include_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      source_id:
+        type: array
+        items:
+          type: integer
+      dest_document_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      dest_document_type:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      dest_document_main_subject:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      dest_document_category:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      revoked_type_name:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      revoked_size:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      dest_document_year_from:
+        title: Dest document year from
+        type: integer
+      dest_document_year_to:
+        title: Dest document year to
+        type: integer
+  DocumentWithUsersActionsSearchOptionsSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      excel_words_id:
+        title: Excel words id
+        type: string
+        minLength: 1
+      plan_id:
+        title: Plan id
+        type: string
+        minLength: 1
+  DocumentWithUsersActionsSearchOptions:
+    required:
+    - excel_words_id
+    - plan_id
+    type: object
+    properties:
+      excel_words_id:
+        title: Excel words id
+        type: string
+        minLength: 1
+      plan_id:
+        title: Plan id
+        type: string
+        minLength: 1
+      search_options:
+        title: Search options
+        type: object
+        additionalProperties:
+          type: string
+          x-nullable: true
+        default: {}
+  DraftDocumentSearch:
+    type: object
+    properties:
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      exclude_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      source_id:
+        type: array
+        items:
+          type: integer
+      source_name:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      person:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      person_search_type:
+        title: Person search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      location:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      location_search_type:
+        title: Location search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      organization:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      organization_search_type:
+        title: Organization search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      highlight_entities:
+        title: Highlight entities
+        type: boolean
+        default: false
+      source_name_agg:
+        title: Source name agg
+        type: boolean
+        default: false
+      similarity_field:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      similar_object_id:
+        title: Similar object id
+        type: string
+        minLength: 1
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      include_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      user_id:
+        title: User id
+        type: string
+        minLength: 1
+      similar_index_name:
+        title: Similar index name
+        type: string
+        enum:
+        - hooshyar_document
+        - hooshyar_paragraph
+        - hooshyar_draft_document
+        default: hooshyar_draft_document
+  CreateDraftDocument:
+    required:
+    - source_id
+    - file_name
+    type: object
+    properties:
+      source_id:
+        title: Source id
+        type: integer
+      file_name:
+        title: File name
+        type: string
+        minLength: 1
+      file:
+        title: File
+        type: string
+        readOnly: true
+        format: uri
+  ExcelWordsSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - file_name
+        - created_at
+        - user_id
+        default: user_id
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      user_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      is_deleted:
+        title: Is deleted
+        type: boolean
+        default: false
+  ExcelWords:
+    required:
+    - file_name
+    type: object
+    properties:
+      file_name:
+        title: File name
+        type: string
+        minLength: 1
+      file:
+        title: File
+        type: string
+        readOnly: true
+        format: uri
+  UpdateExcelWords:
+    type: object
+    properties:
+      is_delete:
+        title: Is delete
+        type: boolean
+  FarsnetSearchSerizlier:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - word2.keyword
+        - type
+        default: type
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      word:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  KnowledgeGraphSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - title
+        - type
+        - created_at
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      type:
+        title: Type
+        type: string
+        enum:
+        - sample
+        - public
+        - private
+      title:
+        title: Title
+        type: string
+        minLength: 1
+  BaseKnowledgeGraphNode:
+    required:
+    - id
+    - fa_name
+    type: object
+    properties:
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      fa_name:
+        title: Fa name
+        type: string
+        minLength: 1
+      en_name:
+        title: En name
+        type: string
+        default: ''
+      weight:
+        title: Weight
+        type: integer
+        default: 1
+  BaseKnowledgeGraphEdge:
+    required:
+    - id
+    - source_node_id
+    - target_node_id
+    type: object
+    properties:
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      source_node_id:
+        title: Source node id
+        type: string
+        minLength: 1
+      target_node_id:
+        title: Target node id
+        type: string
+        minLength: 1
+      weight:
+        title: Weight
+        type: integer
+        default: 1
+  KnowledgeGraph:
+    required:
+    - title
+    - nodes
+    - edges
+    type: object
+    properties:
+      type:
+        title: Type
+        type: string
+        enum:
+        - sample
+        - public
+        - private
+        default: private
+      title:
+        title: Title
+        type: string
+        minLength: 1
+      nodes:
+        type: array
+        items:
+          $ref: '#/definitions/BaseKnowledgeGraphNode'
+      edges:
+        type: array
+        items:
+          $ref: '#/definitions/BaseKnowledgeGraphEdge'
+      is_public:
+        title: Is public
+        type: boolean
+        default: false
+  ManageDocumentComment:
+    required:
+    - accepted
+    type: object
+    properties:
+      accepted:
+        title: Accepted
+        type: integer
+        enum:
+        - 0
+        - 1
+        - 2
+  ParagraphUserPlansInfo:
+    type: object
+    properties:
+      plans:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      plan_id:
+        title: Plan id
+        type: string
+        minLength: 1
+      project_id:
+        title: Project id
+        type: string
+        minLength: 1
+      object_ids:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      document_id:
+        title: Document id
+        type: string
+        minLength: 1
+      action:
+        title: Action
+        type: string
+        enum:
+        - add
+        - remove
+        - update
+        - deactivate
+        - activate
+        default: update
+  ParagraphUserPlanType:
+    type: object
+    properties:
+      plan_id:
+        title: Plan id
+        type: string
+        minLength: 1
+      project_id:
+        title: Project id
+        type: string
+        minLength: 1
+      object_ids:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      type:
+        title: Type
+        type: string
+        enum:
+        - اصلی
+        - فرعی
+        default: اصلی
+      description:
+        title: Description
+        type: string
+      action:
+        title: Action
+        type: string
+        enum:
+        - add
+        - update
+        - remove
+        default: add
+      document_id:
+        title: Document id
+        type: string
+        minLength: 1
+  ParagraphUserValidityStatus:
+    required:
+    - validity
+    - object_ids
+    type: object
+    properties:
+      validity:
+        title: Validity
+        type: string
+      project_id:
+        title: Project id
+        type: string
+        minLength: 1
+      object_ids:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  ParagraphActorSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - document_name.keyword
+        - document_datetime
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      text_query_version:
+        title: Text query version
+        type: string
+        enum:
+        - v1
+        - v2
+        default: v1
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_type:
+        title: Text search type
+        type: string
+        enum:
+        - exact
+        - and
+        - or
+        - level
+        default: exact
+      place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      place_search_type:
+        type: array
+        items:
+          type: string
+          enum:
+          - and
+          - or
+          default: or
+        default:
+        - or
+      score:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      text_search_level:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      apply_level:
+        title: Apply level
+        type: boolean
+        default: true
+      exclude_text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      exclude_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default: []
+      word_agg:
+        title: Word agg
+        type: boolean
+        default: false
+      text_per_year_agg:
+        title: Text per year agg
+        type: boolean
+        default: false
+      highlight_phrase:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_phrase_place:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - content
+      excel_id:
+        title: Excel id
+        type: string
+        minLength: 1
+      include_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      highlight_actor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      source_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      actor_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      actor_role:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - متولی اجرا
+        - همکار
+        - دارای صلاحیت اختیاری
+        - ناظر
+        - تحت نظارت
+        - تنظیم‌گر
+      document_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      document_keyword_main_subject:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      document_keyword_main_subject_search_type:
+        title: Document keyword main subject search type
+        type: string
+        enum:
+        - and
+        - or
+        default: or
+      document_year:
+        title: Document year
+        type: integer
+      supervisor:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      supervised:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      make_supervision_graph:
+        title: Make supervision graph
+        type: boolean
+        default: false
+      supervision_graph_type:
+        title: Supervision graph type
+        type: string
+        enum:
+        - all
+        - selected_actors
+        default: all
+  ParagraphWithUsersActionsSearchOptionsSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      excel_words_id:
+        title: Excel words id
+        type: string
+        minLength: 1
+      plan_id:
+        title: Plan id
+        type: string
+        minLength: 1
+  ParagraphWithUsersActionsSearchOptions:
+    required:
+    - excel_words_id
+    - plan_id
+    type: object
+    properties:
+      excel_words_id:
+        title: Excel words id
+        type: string
+        minLength: 1
+      plan_id:
+        title: Plan id
+        type: string
+        minLength: 1
+      search_options:
+        title: Search options
+        type: object
+        additionalProperties:
+          type: string
+          x-nullable: true
+        default: {}
+  PlanSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - file_name
+        - created_at
+        - user_id
+        default: user_id
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      user_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      is_deleted:
+        title: Is deleted
+        type: boolean
+        default: false
+  Plan:
+    required:
+    - file_name
+    type: object
+    properties:
+      file_name:
+        title: File name
+        type: string
+        minLength: 1
+      file:
+        title: File
+        type: string
+        readOnly: true
+        format: uri
+  UpdatePlan:
+    type: object
+    properties:
+      id_deleted:
+        title: Id deleted
+        type: boolean
+        default: false
+  RagCreateGroup:
+    required:
+    - group_name
+    type: object
+    properties:
+      group_name:
+        title: Group name
+        type: string
+        minLength: 1
+  ReferencesSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      source_document_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      target_document_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      document_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      make_graph:
+        title: Make graph
+        type: boolean
+        default: false
+      graph_type:
+        title: Graph type
+        type: string
+        enum:
+        - neighbor
+        - type
+        default: neighbor
+      graph_nodes_type:
+        title: Graph nodes type
+        type: string
+        enum:
+        - all
+        - selected_documents
+        default: all
+  SearchRecommendation:
+    required:
+    - words
+    type: object
+    properties:
+      words:
+        type: array
+        items:
+          type: string
+          maxLength: 255
+          minLength: 1
+  SourceSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+  SpellChecker:
+    required:
+    - text
+    type: object
+    properties:
+      text:
+        type: array
+        items:
+          type: string
+          minLength: 1
+  TanghihiProjectSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - name.keyword
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      name:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      excel_words_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      plan_id:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      users:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      is_deleted:
+        title: Is deleted
+        type: boolean
+        default: false
+  TanghihiProject:
+    required:
+    - name
+    - excel_words_id
+    - plan_id
+    - source_id
+    type: object
+    properties:
+      name:
+        title: Name
+        type: string
+        minLength: 1
+      excel_words_id:
+        title: Excel words id
+        type: string
+        minLength: 1
+      plan_id:
+        title: Plan id
+        type: string
+        minLength: 1
+      users:
+        type: array
+        items:
+          type: object
+          additionalProperties:
+            type: string
+            x-nullable: true
+        default: []
+      users_action:
+        title: Users action
+        type: string
+        enum:
+        - add
+        - remove
+        - update
+        default: update
+      project_type:
+        title: Project type
+        type: string
+        enum:
+        - keyword
+        - document
+        - filter
+        default: keyword
+      is_deleted:
+        title: Is deleted
+        type: boolean
+        default: false
+      source_id:
+        title: Source id
+        type: string
+        minLength: 1
+  TanghihiProjectSearchOptionsForDocumentWithUsersActionsSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      project_id:
+        title: Project id
+        type: string
+        minLength: 1
+  TanghihiProjectSearchOptionsForDocumentWithUsersActions:
+    required:
+    - project_id
+    type: object
+    properties:
+      project_id:
+        title: Project id
+        type: string
+        minLength: 1
+      search_options:
+        title: Search options
+        type: object
+        additionalProperties:
+          type: string
+          x-nullable: true
+        default: {}
+  TanghihiProjectSearchOptionsForParagraphWithUsersActionsSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _id
+        - _score
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      project_id:
+        title: Project id
+        type: string
+        minLength: 1
+  TanghihiProjectSearchOptionsForParagraphWithUsersActions:
+    required:
+    - project_id
+    type: object
+    properties:
+      project_id:
+        title: Project id
+        type: string
+        minLength: 1
+      search_options:
+        title: Search options
+        type: object
+        additionalProperties:
+          type: string
+          x-nullable: true
+        default: {}
+  ThermalKnowledgeGraphSearch:
+    type: object
+    properties:
+      sort_by:
+        title: Sort by
+        type: string
+        enum:
+        - _score
+        - title
+        - type
+        - created_at
+        default: _score
+      order:
+        title: Order
+        type: string
+        enum:
+        - desc
+        - asc
+        default: desc
+      page_size:
+        title: Page size
+        type: integer
+        default: 10
+      page:
+        title: Page
+        type: integer
+        default: 1
+      source:
+        type: array
+        items:
+          type: string
+          minLength: 1
+        default:
+        - 'False'
+      agg:
+        title: Agg
+        type: boolean
+        default: false
+      highlight:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      key:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value:
+        type: array
+        items:
+          type: string
+          minLength: 1
+      value_search_type:
+        title: Value search type
+        type: string
+        enum:
+        - and
+        - or
+        default: and
+      search_after:
+        title: Search after
+        type: boolean
+        default: false
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      type:
+        title: Type
+        type: string
+        enum:
+        - sample
+        - public
+        - private
+      title:
+        title: Title
+        type: string
+        minLength: 1
+  BaseThermalKnowledgeGraphNode:
+    required:
+    - id
+    - fa_name
+    - node_type
+    type: object
+    properties:
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      fa_name:
+        title: Fa name
+        type: string
+        minLength: 1
+      en_name:
+        title: En name
+        type: string
+        default: ''
+      node_type:
+        title: Node type
+        type: string
+        enum:
+        - متغیر
+        - زیرمدل
+  BaseThermalKnowledgeGraphEdge:
+    required:
+    - id
+    - source_node_id
+    - target_node_id
+    - impact_type
+    type: object
+    properties:
+      id:
+        title: Id
+        type: string
+        minLength: 1
+      source_node_id:
+        title: Source node id
+        type: string
+        minLength: 1
+      target_node_id:
+        title: Target node id
+        type: string
+        minLength: 1
+      weight:
+        title: Weight
+        type: integer
+        default: 1
+      impact_type:
+        title: Impact type
+        type: string
+        enum:
+        - مستقیم
+        - معکوس
+  ThermalKnowledgeGraph:
+    required:
+    - title
+    - nodes
+    - edges
+    type: object
+    properties:
+      type:
+        title: Type
+        type: string
+        enum:
+        - sample
+        - public
+        - private
+        default: private
+      title:
+        title: Title
+        type: string
+        minLength: 1
+      nodes:
+        type: array
+        items:
+          $ref: '#/definitions/BaseThermalKnowledgeGraphNode'
+      edges:
+        type: array
+        items:
+          $ref: '#/definitions/BaseThermalKnowledgeGraphEdge'
+      is_public:
+        title: Is public
+        type: boolean
+        default: false
+  UploadKnowledgeGraph:
+    required:
+    - title
+    type: object
+    properties:
+      graph_file:
+        title: Graph file
+        type: string
+        readOnly: true
+        format: uri
+      title:
+        title: Title
+        type: string
+        minLength: 1
+      type:
+        title: Type
+        type: string
+        enum:
+        - sample
+        - public
+        - private
+        default: private
+  UploadThermalKnowledgeGraph:
+    required:
+    - title
+    type: object
+    properties:
+      graph_file:
+        title: Graph file
+        type: string
+        readOnly: true
+        format: uri
+      title:
+        title: Title
+        type: string
+        minLength: 1
+      type:
+        title: Type
+        type: string
+        enum:
+        - sample
+        - public
+        - private
+        default: private
